@@ -1,0 +1,22 @@
+---
+- name: "Check that minikube is exists"
+  stat:
+    path: "{{ pkg_tmp_src }}/minikube"
+  register: stat_result
+- name: "Download minikube"
+  get_url:
+    url: "https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64"
+    dest: "{{ pkg_tmp_src }}/minikube"
+    validate_certs: false
+  register: download_minikube
+  until: download_minikube is succeeded
+  when:
+  - not stat_result.stat.exists
+  - minikube_install_type == 'remote'
+- name: Copy minikube to final directory
+  become: true
+  copy:
+    remote_src: yes
+    src: "{{ pkg_tmp_src }}/minikube"
+    mode: 0777
+    dest: "/usr/local/bin/"

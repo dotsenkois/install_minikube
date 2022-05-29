@@ -1,0 +1,21 @@
+---
+- name: "Check that kubectl is exists"
+  stat:
+    path: "{{ pkg_tmp_src }}/kubectl"
+  register: stat_result
+- name: "Download kubectl"
+  get_url:
+    url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubernetes_version }}/bin/linux/amd64/kubectl"
+    dest: "{{ pkg_tmp_src }}/kubectl"
+    validate_certs: false
+  register: download_kubectl
+  until: download_kubectl is succeeded
+  when:
+  - not stat_result.stat.exists
+  - minikube_install_type == 'remote'
+- name: Copy kubectl to final directory
+  copy:
+    remote_src: yes
+    src: "{{ pkg_tmp_src }}/kubectl"
+    mode: 0777
+    dest: "/usr/local/bin/kubectl"

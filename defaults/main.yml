@@ -1,0 +1,4 @@
+---
+kubernetes_version: "v1.24.1"
+minikube_install_type: remote
+pkg_tmp_src: "/tmp"

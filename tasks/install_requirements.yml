@@ -1,0 +1,12 @@
+---
+- name: Update all packages to their latest version
+  become: true
+  ansible.builtin.shell: 
+    cmd: apt-get update -y
+- name: "Install docker.io, conntrack, iptables"
+  become: true
+  apt:
+    pkg:
+    - docker.io
+    - conntrack
+    - iptables

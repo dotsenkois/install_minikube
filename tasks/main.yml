@@ -1,0 +1,5 @@
+---
+- import_tasks: install_kubernates.yml
+- import_tasks: install_requirements.yml
+- import_tasks: install_minikube.yml
+- import_tasks: run_minikube.yml
