@@ -19,4 +19,4 @@
     remote_src: yes
     src: "{{ pkg_tmp_src }}/minikube"
     mode: 0777
-    dest: "/usr/local/bin/"
+    dest: "/usr/local/bin/minikube"
