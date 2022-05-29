@@ -14,6 +14,7 @@
   - not stat_result.stat.exists
   - minikube_install_type == 'remote'
 - name: Copy kubectl to final directory
+  become: true
   copy:
     remote_src: yes
     src: "{{ pkg_tmp_src }}/kubectl"
