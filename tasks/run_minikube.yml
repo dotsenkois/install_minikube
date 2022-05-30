@@ -1,4 +1,3 @@
 - name: Run minikube
-  become: true
   ansible.builtin.shell: 
-    cmd: minikube version
+    cmd: minikube start --vm-driver=none
