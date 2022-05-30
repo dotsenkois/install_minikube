@@ -6,7 +6,7 @@
     update_cache: yes
     cache_valid_time: 3600 
 
-- name: "Install conntrack, iptables"
+- name: "Install conntrack, iptables, python3-pip"
   become: true
   apt:
     pkg:
