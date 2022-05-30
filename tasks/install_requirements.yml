@@ -15,5 +15,5 @@
   
 - name: "Install docker"
   pip:
-    pkg:
+    name:
     - docker
