@@ -1,8 +1,11 @@
 ---
 - name: Update all packages to their latest version
   become: true
-  ansible.builtin.shell: 
-    cmd: apt-get update -y
+  apt: 
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 3600 
+
 - name: "Install docker.io, conntrack, iptables"
   become: true
   apt:
