@@ -18,3 +18,4 @@
   pip:
     name:
     - docker
+    - docker.io
