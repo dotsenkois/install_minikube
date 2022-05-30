@@ -16,4 +16,4 @@
 - name: "Install docker"
   pip:
     pkg:
-    - docker.io
+    - docker
