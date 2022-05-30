@@ -9,3 +9,6 @@
     name: dotsenkois
     groups: docker
     append: yes
+- name: newgrp docker
+  ansible.builtin.shell: 
+    cmd: newgrp docker
