@@ -12,6 +12,7 @@
     pkg:
     - conntrack
     - iptables
+    - python3-pip
   
 - name: "Install docker"
   pip:
