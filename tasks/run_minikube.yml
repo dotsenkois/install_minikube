@@ -3,5 +3,4 @@
   become: true
   ansible.builtin.shell: 
     cmd: sudo sysctl fs.protected_regular=0 && minikube start --vm-driver=none
-  set_fact:
-    my_hosts: 
+  register: command_result
