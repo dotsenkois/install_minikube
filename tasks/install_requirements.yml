@@ -13,5 +13,13 @@
     - conntrack
     - iptables
     - docker.io
-  
+- name: Change owner of docker
+  ansible.builtin.file:
+    path: /usr/bin/dockerd
+    owner: dotsenkois
+    group: dotsenkois
+- name: Restart service docker, in all cases
+  ansible.builtin.service:
+    name: docker
+    state: restarted  
 
