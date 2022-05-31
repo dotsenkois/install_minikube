@@ -18,6 +18,6 @@
   copy:
     remote_src: yes
     src: "{{ pkg_tmp_src }}/minikube"
-    owner: dotsenkois
+    owner: root
     mode: 0777
     dest: "/usr/local/bin/minikube"
