@@ -2,5 +2,4 @@
 - import_tasks: "install_kubernetes.yml"
 - import_tasks: "install_requirements.yml"
 - import_tasks: "install_minikube.yml"
-- import_tasks: "configure_user.yml"
 - import_tasks: "run_minikube.yml"
