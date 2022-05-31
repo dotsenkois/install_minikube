@@ -14,5 +14,6 @@
     - iptables
     - docker.io
     - docker
+    - python3-docker
 
 
