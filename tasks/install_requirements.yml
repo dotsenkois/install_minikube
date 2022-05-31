@@ -13,4 +13,6 @@
     - conntrack
     - iptables
     - docker.io
+    - docker
+
 
