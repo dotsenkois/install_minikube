@@ -1,4 +1,4 @@
 - name: Run minikube
-  #become: true
+  become: true
   ansible.builtin.shell: 
-    cmd: minikube delete && minikube start --vm-driver=none
+    cmd: minikube start --vm-driver=none

@@ -19,5 +19,5 @@
     remote_src: yes
     src: "{{ pkg_tmp_src }}/kubectl"
     mode: 0777
-    owner: root
+    #owner: root
     dest: "/usr/local/bin/kubectl"
